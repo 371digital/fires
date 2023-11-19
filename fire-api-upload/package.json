@@ -1,0 +1,17 @@
+{
+  "name": "fire-api-upload",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "./src/index.js",
+  "fireVersion": "1.0.0",
+  "props": {},
+  "config": {},
+  "fires": { "fire-uuid": "1.0.0" },
+  "dependencies": { "multer": "^1.4.4", "371fire": "1.0.0" },
+  "scripts": {
+    "preinstall": "fire uninstall",
+    "start": "fire run ./",
+    "postinstall": "fire install",
+    "publish": "fire publish"
+  }
+}
