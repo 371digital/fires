@@ -1,13 +1,17 @@
 {
-  "name": "fire-validation",
-  "version": "1.0.8",
+  "name": "fire-api-swagger",
+  "version": "1.0.0",
   "license": "MIT",
   "main": "./src/index.js",
   "fireVersion": "1.0.0",
   "props": {},
   "config": {},
   "fires": {},
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.18.2",
+    "swagger-ui-express": "^5.0.0",
+    "371fire": "1.0.0"
+  },
   "scripts": {
     "preinstall": "fire uninstall",
     "start": "fire run ./",

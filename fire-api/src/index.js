@@ -136,6 +136,10 @@ class FireApi {
     this.successMessages = successMessages;
   };
 
+  setPlugin = (plugin) => {
+    plugin({ app: this.app, virtualRouters: this.virtualRouters });
+  };
+
   fire = ({} = {}) => {
     return {
       start: async ({ port, mongoUrl, routers } = {}) => {
@@ -144,6 +148,7 @@ class FireApi {
       },
       setErrorMessages: this.setErrorMessages,
       setSuccessMessages: this.setSuccessMessages,
+      setPlugin: this.setPlugin,
       Mongoose: mongoose,
     };
   };

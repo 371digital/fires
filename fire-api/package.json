@@ -1,12 +1,12 @@
 {
   "name": "fire-api",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "license": "MIT",
   "main": "./src/index.js",
   "fireVersion": "1.0.0",
   "props": {},
   "config": {},
-  "fires": { "fire-validation": "1.0.6" },
+  "fires": { "fire-validation": "1.0.8" },
   "dependencies": {
     "body-parser": "^1.20.2",
     "cookie-parser": "^1.4.6",
