@@ -1,13 +1,16 @@
-import swagger from "swagger-ui-express";
+import swaggerUi from "swagger-ui-express";
 
 class FireApiSwagger {
   constructor() {}
 
-  fire({ document } = {}) {
+  fire = ({ documentation } = {}) => {
     return ({ app }) => {
-      app.use("/api-docs", swagger.serve);
-      app.get("/api-docs", swagger.setup(document));
-    };
+      app.use(
+        "/api-docs",
+        swaggerUi.serve,
+        swaggerUi.setup(documentation)
+      );
+    } 
   }
 }
 

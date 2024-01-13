@@ -1,5 +1,5 @@
 {
-  "name": "fire-validation",
+  "name": "fire-mongo",
   "version": "1.0.0",
   "license": "MIT",
   "main": "./src/index.js",
@@ -7,7 +7,9 @@
   "props": {},
   "config": {},
   "fires": {},
-  "dependencies": {},
+  "dependencies": {
+    "mongoose": "^8.0.0"
+  },
   "scripts": {
     "preinstall": "fire uninstall",
     "start": "fire run ./",
