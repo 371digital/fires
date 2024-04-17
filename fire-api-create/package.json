@@ -1,0 +1,18 @@
+{
+  "name": "fire-api-create",
+  "version": "1.0.1",
+  "license": "MIT",
+  "main": "./src/index.js",
+  "fireVersion": "1.0.0",
+  "props": { "name": { "fieldTitle": "name", "type": "slug" } },
+  "config": {},
+  "fires": { "fire-logic-runner": "1.0.0" },
+  "dependencies": { "inquirer": "8.0.1", "371fire": "1.0.0" },
+  "scripts": {
+    "preinstall": "fire uninstall",
+    "start": "fire run ./",
+    "dev": "fire run ./ watch=true",
+    "postinstall": "fire install",
+    "publish": "fire publish"
+  }
+}

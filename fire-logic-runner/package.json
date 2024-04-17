@@ -1,0 +1,18 @@
+{
+  "name": "fire-logic-runner",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "./src/index.js",
+  "fireVersion": "1.0.0",
+  "props": {},
+  "config": {},
+  "fires": {},
+  "dependencies": { "371fire": "1.0.0" },
+  "scripts": {
+    "preinstall": "fire uninstall",
+    "start": "fire run ./",
+    "postinstall": "fire install",
+    "publish": "fire publish"
+  },
+  "types": "./types/index.d.ts"
+}
