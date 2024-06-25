@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "jwt": ["./src/jwt"],
+      "messages": ["./src/messages"],
+      "validationRules": ["./src/validationRules"]
+    }
+  }
+}

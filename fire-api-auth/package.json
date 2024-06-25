@@ -1,0 +1,33 @@
+{
+  "name": "fire-api-auth",
+  "version": "1.1.0",
+  "license": "MIT",
+  "main": "./src/index.js",
+  "fireVersion": "1.0.0",
+  "props": {},
+  "config": {},
+  "fires": {
+    "fire-api": "1.1.0",
+    "fire-mongo": "1.0.0",
+    "fire-validation": "1.1.0",
+    "fire-api-response-message": "1.1.0",
+    "fire-mailer": "1.0.0"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "jsonwebtoken": "^9.0.2",
+    "371fire": "1.0.0"
+  },
+  "scripts": {
+    "preinstall": "fire uninstall",
+    "start": "fire run ./",
+    "dev": "fire run ./ watch=true",
+    "postinstall": "fire install",
+    "publish": "fire publish"
+  },
+  "alias": {
+    "jwt": "./src/jwt",
+    "messages": "./src/messages",
+    "validationRules": "./src/validationRules"
+  }
+}

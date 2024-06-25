@@ -2,7 +2,9 @@ class FireApiValidation {
   constructor() {}
 
   sendResponse = (response, message) => {
-    response.status(500).json({ validationError: message });
+    response.setHeader("Content-Type", "application/json");
+    response.status(500).json({error: message});
+    return {error: message}
   };
 
   fire = ({ request, response, routerOptions } = {}) => {
@@ -14,12 +16,17 @@ class FireApiValidation {
         ...(request.body || {}),
         ...(request.params || {}),
       };
-      Object.keys(validation).forEach((key) => {
-        const res = validation[key].validate(params[key]);
-        if (res !== true) {
-          return this.sendResponse(response, `${key} ${res}`);
+  
+      const keys = Object.keys(validation);
+      for (let i = 0; i < keys.length; i++) {
+        const key = keys[i];
+        if(validation[key]?.validate) {
+          const res = validation[key].validate(params[key]);
+          if (res !== true) {
+            return this.sendResponse(response, `${key} ${res}`);
+          }
         }
-      });
+      }
       return {};
     } catch (error) {
       return this.sendResponse(

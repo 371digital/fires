@@ -25,8 +25,8 @@ class Builder {
   };
 
   start = async ({ port }) => {
-    this.routeManager.initializeRoutes();
-    this.routeManager.initializeRegisteredRoutes();
+    await this.routeManager.initializeRoutes();
+    await this.routeManager.initializeRegisteredRoutes();
     this.routeManager.generateRoutes();
     return await new Promise((resolve) => {
       this.server.listen(port, resolve);

@@ -1,17 +1,24 @@
 {
-  "name": "fire-api-validation",
-  "version": "1.1.0",
+  "name": "fire-mailer",
+  "version": "1.0.0",
   "license": "MIT",
   "main": "./src/index.js",
   "fireVersion": "1.0.0",
   "props": {},
   "config": {},
   "fires": {},
-  "dependencies": { "371fire": "1.0.0" },
+  "dependencies": {
+    "nodemailer": "^6.9.13",
+    "pug": "^3.0.3",
+    "vm2": "^3.9.19",
+    "371fire": "1.0.0"
+  },
   "scripts": {
     "preinstall": "fire uninstall",
     "start": "fire run ./",
+    "dev": "fire run ./ watch=true",
     "postinstall": "fire install",
     "publish": "fire publish"
-  }
+  },
+  "alias": {}
 }

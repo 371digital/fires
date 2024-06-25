@@ -35,9 +35,9 @@ interface ObjectValidatorInterface {
 }
 
 interface FireValidation {
-  string: StringValidatorInterface;
-  number: NumberValidatorInterface;
-  object: ObjectValidatorInterface;
+  string: () => StringValidatorInterface;
+  number: () => NumberValidatorInterface;
+  object: () => ObjectValidatorInterface;
 }
 
 export default function fire(): FireValidation;

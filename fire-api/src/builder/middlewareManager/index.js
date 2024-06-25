@@ -11,21 +11,26 @@ class MiddlewareManager {
   }
 
   async runMiddlewares(context, lifeCycle) {
+    let responses = {}
     const relevantMiddlewares = this.middlewares.filter(
       (m) => m.lifeCycle === lifeCycle
     );
 
     for (const { middleware } of relevantMiddlewares) {
-      await this.executeMiddleware(middleware, context);
+      const middlewareResponse = await this.executeMiddleware(middleware, context);
+      if(middlewareResponse && typeof middlewareResponse === "object") {
+        if(middlewareResponse?.error) return middlewareResponse;
+        responses = { ...responses, ...middlewareResponse || {}}
+      } 
     }
+    return responses;
   }
 
   async executeMiddleware(middleware, context) {
     try {
-      await middleware(context);
+     return await middleware(context);
     } catch (error) {
-      console.error("Middleware execution error:", error);
-      throw error;
+      return {error}
     }
   }
 }

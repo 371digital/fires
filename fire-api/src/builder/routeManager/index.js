@@ -99,6 +99,12 @@ class RouterManager {
         "pre"
       );
 
+      if (middlewaresResponse.error)
+        return console.error(
+          "[FIRE-API] Middleware Response Error:",
+          middlewaresResponse
+        );
+
       const endPointContext = {
         middlewaresResponse,
         query: request.query || {},
@@ -137,23 +143,24 @@ class RouterManager {
     this.registeredRoutes.push(creatorMethod);
   };
 
-  initializeRegisteredRoutes() {
+  initializeRegisteredRoutes = async () => {
     const context = {
       virtualRoutes: this.virtualRoutes,
       app: this.app,
     };
-    this.registeredRoutes.forEach((creatorMethod) => {
-      const response = creatorMethod(context);
+    for (let index = 0; index < this.registeredRoutes.length; index++) {
+      const creatorMethod = this.registeredRoutes[index];
+      const response = await creatorMethod(context);
       if (response)
         response.forEach((response) => {
           if (response) {
             this.addEndPoint(response);
           }
         });
-    });
-  }
+    }
+  };
 
-  initializeRoutes() {
+  initializeRoutes = async () => {
     const cwd = process.cwd();
     const routesDir = path.join(cwd, "src", "routes");
     const routes = this.getFilesInDirectory(routesDir).map((routerPath) =>
@@ -171,7 +178,7 @@ class RouterManager {
         method,
       });
     });
-  }
+  };
 }
 
 export default RouterManager;

@@ -1,14 +1,15 @@
 {
   "name": "fire-api",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "MIT",
   "main": "./src/index.js",
   "fireVersion": "1.0.0",
   "props": {},
   "config": {},
   "types": "./index.d.ts",
-  "fires": { },
+  "fires": {},
   "dependencies": {
+    "@types/express": "^4.17.21",
     "body-parser": "^1.20.2",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",

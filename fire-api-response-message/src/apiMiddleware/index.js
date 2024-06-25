@@ -8,7 +8,7 @@ class ApiMiddleware {
       response.setHeader("Content-Type", "application/json");
       return response.status(statusCode).json(message);
     } catch (error) {
-      return error;
+      return {error};
     }
   }
 
@@ -28,7 +28,6 @@ class ApiMiddleware {
       }
       return ApiMiddleware.sendResponse(response, routerResponse);
     } catch (error) {
-      console.log(error);
       return ApiMiddleware.sendResponse(
         response,
         ApiResponse.error(`An unexpected error occurred ${error}`)

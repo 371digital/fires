@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif !important;
+        font-size: 22px;
+      }
+      table {
+        width: 100%;
+        max-width: 600px;
+        margin: auto;
+        padding: 26px;
+        background: white;
+        border-radius: 12px;
+        border: 0.5px solid #dce2fc;
+      }
+      td {
+        font-size: 16px;
+        line-height: 24px;
+        color: #02072c;
+      }
+      .center {
+        text-align: center;
+      }
+      .button {
+        display: inline-block; /* Yatay hizalama için */
+        width: 100%;
+        height: 60px;
+        background: #3177ff;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        text-decoration: none; /* Bağlantı alt çizgisini kaldır */
+        text-align: center;
+        line-height: 60px; /* Metni dikey olarak ortala */
+        color: white !important;
+      }
+      img {
+        width: 240px;
+      }
+    </style>
+  </head>
+  <body>
+    <table cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="center" style="padding-bottom: 32px">
+          <img src="{{params.image}}" />
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="center"
+          style="
+            color: #02072c;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 28.8px;
+            padding-bottom: 32px;
+          "
+        >
+          {{params.title}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div
+            style="
+              background: rgba(232.5, 229.9, 245.81, 0.84);
+              max-height: 1px;
+              height: 1px;
+            "
+          ></div>
+          <div style="height: 34px"></div>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding-bottom: 34px">
+          <div style="color: #02072c; font-weight: 600; line-height: 20.4px">
+            {{params.subTitle}}
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>{{params.content}}</td>
+      </tr>
+      <tr>
+        <td style="padding-top: 34px">
+          <a href="{{params.href}}" class="button">{{params.buttonText}}</a>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="center"
+          style="
+            color: #aeaeae;
+            font-size: 16px;
+            font-weight: 400;
+            text-align: center;
+            padding-top: 34px;
+          "
+        >
+          {{params.company}}
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
